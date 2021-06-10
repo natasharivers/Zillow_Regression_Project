@@ -43,14 +43,14 @@ def get_zillow():
 
 def wrangle_zillow():
     #check to see if zillow.csv already exist
-    if os.path.isfile('zillow.csv'):
-        df = pd.read_csv('zillow.csv', index_col=0)
+    #if os.path.isfile('zillow.csv'):
+    #    df = pd.read_csv('zillow.csv', index_col=0)
     
-    else:
+    #else:
 
-        #creates new csv if one does not already exist
-        df = get_zillow()
-        df.to_csv('zillow.csv')
+    #creates new csv if one does not already exist
+    df = get_zillow()
+    df.to_csv('zillow.csv')
 
     # drop any nulls
     df = df[~df.isnull()]
