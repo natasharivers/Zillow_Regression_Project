@@ -15,7 +15,7 @@ def prep_zillow(df):
     df['tax_rate'] =df['taxamount']/  df['taxvaluedollarcnt']
     
     #replace blank spaces and special characters
-    df = zillow_df.replace(r'^\s*$', np.nan, regex=True)
+    df = df.replace(r'^\s*$', np.nan, regex=True)
 
     #drop null values- at most there were 9000 nulls (this is only 0.5% of 2.1M)
     df = df.dropna()
