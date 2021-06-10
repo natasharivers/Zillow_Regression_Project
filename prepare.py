@@ -14,9 +14,13 @@ def prep_zillow(df):
     #create new column for tax_rate
     df['tax_rate'] =df['taxamount']/  df['taxvaluedollarcnt']
 
-    #all dytpes are numeric (float64)- do not need dummies
+    #dummies
+    #bedroom count
+    #bathroom count
 
     #change column names to be more legible
+
+    #use minmaxscaler
     
     #replace blank spaces and special characters
     df = df.replace(r'^\s*$', np.nan, regex=True)
