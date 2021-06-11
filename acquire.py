@@ -28,7 +28,7 @@ def get_zillow():
     '''
     
     zp_query = '''
-    SELECT calculatedfinishedsquarefeet, bedroomcnt, bathroomcnt, taxvaluedollarcnt, taxamount, unitcnt, yearbuilt, fips
+    SELECT calculatedfinishedsquarefeet, bedroomcnt, bathroomcnt, taxvaluedollarcnt, taxamount, yearbuilt, fips
     FROM properties_2017
     JOIN predictions_2017 ON properties_2017.parcelid = predictions_2017.parcelid
     JOIN propertylandusetype ON properties_2017.propertylandusetypeid= propertylandusetype.propertylandusetypeid
