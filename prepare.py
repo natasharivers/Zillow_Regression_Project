@@ -8,7 +8,7 @@ from sklearn.impute import SimpleImputer
 
 def prep_zillow(df):
     '''
-    This function takes in the zillow df acquired by get_zillow
+    This function takes in the zillow df acquired by get_zillow_file
     Returns a cleaned zillow df.
     '''
     #create new column for tax_rate
