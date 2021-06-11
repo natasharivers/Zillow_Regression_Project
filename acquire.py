@@ -41,7 +41,7 @@ def get_zillow():
 
 def get_zillow_file():
     if os.path.isfile('zillow.csv'):
-        df = pd.read_csv('zillow'.csv, index_col=0)
+        df = pd.read_csv('zillow.csv', index_col=0)
     
     else:
         df = get_zillow()
