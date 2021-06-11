@@ -19,6 +19,7 @@ def prep_zillow(df):
     #bathroom count
 
     #change column names to be more legible
+    df = df.rename(columns={"calculatedfinishedsquarefeet": "total_sqft", "bedroomcnt": "bedrooms", "bathroomcnt": "bathrooms", "taxvaluedollarcnt": "value_assessed"})
 
     #replace blank spaces and special characters
     df = df.replace(r'^\s*$', np.nan, regex=True)
