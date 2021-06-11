@@ -35,3 +35,16 @@ def get_zillow():
     WHERE predictions_2017.transactiondate BETWEEN '2017-05-01' AND '2017-08-31' AND properties_2017.propertylandusetypeid IN (31, 46, 47, 260, 261, 262, 263, 264, 265, 268, 273, 274, 275, 276, 279);
     '''
     return pd.read_sql(zp_query, get_connection('zillow'))
+
+############################ Zillow CSV Function ##############################
+
+
+def get_zillow_file():
+    if os.path.isfile('zillow.csv'):
+        df = pd.read_csv('zillow'.csv, index_col=0)
+    
+    else:
+        df = get_zillow()
+        df.to_csv('zillow.csv')
+    
+    return df
