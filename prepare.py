@@ -14,13 +14,8 @@ def prep_zillow(df):
     #create new column for tax_rate
     df['tax_rate'] =(df['taxamount']/  df['taxvaluedollarcnt']) *100
 
-    #dummies
-    #bedroom count
-    #bathroom count
-
     #change column names to be more legible
-    df = df.rename(columns={"calculatedfinishedsquarefeet": "total_sqft", "bedroomcnt": "bedrooms", "bathroomcnt": "bathrooms", "taxvaluedollarcnt": "value_assessed"})
-
+    df = df.rename(columns={"calculatedfinishedsquarefeet": "total_sqft", "bedroomcnt": "bedrooms", "bathroomcnt": "bathrooms", "taxvaluedollarcnt": "value_assessed", "taxamount": "tax_amount", "yearbuilt": "year_built", "fips": "county_code" })
     #replace blank spaces and special characters
     df = df.replace(r'^\s*$', np.nan, regex=True)
 
@@ -32,6 +27,21 @@ def prep_zillow(df):
     
     return df
 
+############################## DROP OUTLIERS FUNCTION ##############################
+
+def outlier_bound_calculation(df, variable):
+    '''
+    calcualtes the lower and upper bound to locate outliers in variables
+    '''
+    quartile1, quartile3 = np.percentile(df[variable], [25,75])
+    IQR_value = quartile3 - quartile1
+    lower_bound = quartile1 - (1.5 * IQR_value)
+    upper_bound = quartile3 + (1.5 * IQR_value)
+    '''
+    returns the lowerbound and upperbound values
+    '''
+    return print(f'For {variable} the lower bound is {lower_bound} and  upper bound is {upper_bound}')
+    
 
 ############################## ZILLOW SPLIT ##############################
 
