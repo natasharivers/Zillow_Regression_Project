@@ -12,7 +12,7 @@ def prep_zillow(df):
     Returns a cleaned zillow df.
     '''
     #create new column for tax_rate
-    df['tax_rate'] =df['taxamount']/  df['taxvaluedollarcnt']
+    df['tax_rate'] =(df['taxamount']/  df['taxvaluedollarcnt']) *100
 
     #dummies
     #bedroom count
@@ -20,8 +20,6 @@ def prep_zillow(df):
 
     #change column names to be more legible
 
-    #use minmaxscaler
-    
     #replace blank spaces and special characters
     df = df.replace(r'^\s*$', np.nan, regex=True)
 
