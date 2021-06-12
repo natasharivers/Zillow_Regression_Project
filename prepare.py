@@ -48,16 +48,28 @@ def outlier_bound_calculation(df, variable):
 def zillow_split(df):
     '''
     This function take in get_zillow  from aquire.py and performs a train, validate, test split
-    Returns train, validate, test dfs and prints out the shape of all three datasets
+    Returns train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test
+    and prints out the shape of train, validate, test
     '''
     #create train_validate and test datasets
     train, test = train_test_split(df, train_size = 0.8, random_state = 123)
     #create train and validate datasets
     train, validate = train_test_split(train, train_size = 0.7, random_state = 123)
 
+    #Split into X and y
+    X_train = train.drop(columns=[target])
+    y_train = train[target]
+
+    X_validate = validate[drop(columns=[target])
+    y_validate = validate[target]
+
+    X_test = test.drop(columns=[target])
+    y_test = test[[target]]
+
     # Have function print datasets shape
     print(f'train -> {train.shape}')
     print(f'validate -> {validate.shape}')
     print(f'test -> {test.shape}')
    
-    return train, validate, test
+    return train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test
+
