@@ -98,7 +98,9 @@ def explore_bivariate(train, target, cat_vars, quant_vars):
 
 def final_prep_zillow(df):
     '''
-    This function takes in the zillow df acquired by get_zillow_file
+    This function takes in the zillow df acquired by get_zillow_file,
+    then the function removed outliers from bedrooms, bathrooms, value_assessed, and total_sqft
+    After creating dummies, the function combines original df and dummy df to
     Returns a cleaned zillow df.
     '''
     #create new column for tax_rate
@@ -154,3 +156,24 @@ def final_prep_zillow(df):
     df.drop_duplicates(inplace=True)
     
     return df
+
+############################## Select K Best Function  ##############################
+
+#X- features, y- target, k-#of features
+def select_kbest(X,y,k): 
+    f_selector = SelectKBest(f_regression, k)
+    f_selector.fit(X, y)
+    k_features = X.columns[f_selector.get_support()]
+
+    return k_features
+
+############################## RFE Function ##############################
+
+def rfe(X, y, n):
+    lm = LinearRegression()
+    rfe = RFE(lm, n)
+    rfe.fit(X, y)
+    
+    n_features = X.columns[rfe.support_]
+    
+    return n_features
