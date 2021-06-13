@@ -3,6 +3,8 @@ import numpy as np
 
 from sklearn.model_selection import train_test_split
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import MinMaxScaler
+
 
 ############################## PREP ZILLOW  ##############################
 
@@ -177,3 +179,39 @@ def rfe(X, y, n):
     n_features = X.columns[rfe.support_]
     
     return n_features
+
+############################## MinMaxScaler Function ##############################
+
+
+def min_max_scaler(X_train, X_validate, X_test, numeric_cols):
+    """
+    this function takes in 3 dataframes with the same columns,
+    a list of numeric column names (because the scaler can only work with numeric columns),
+    and fits a min-max scaler to the first dataframe and transforms all
+    3 dataframes using that scaler.
+    it returns 3 dataframes with the same column names and scaled values.
+    """
+    # create the scaler object and fit it to X_train (i.e. identify min and max)
+    # if copy = false, inplace row normalization happens and avoids a copy (if the input is already a numpy array).
+    scaler = MinMaxScaler(copy=True).fit(X_train[numeric_cols])
+    # scale X_train, X_validate, X_test using the mins and maxes stored in the scaler derived from X_train.
+    #
+    X_train_scaled_array = scaler.transform(X_train[numeric_cols])
+    X_validate_scaled_array = scaler.transform(X_validate[numeric_cols])
+    X_test_scaled_array = scaler.transform(X_test[numeric_cols])
+    # convert arrays to dataframes
+    X_train_scaled = pd.DataFrame(X_train_scaled_array, columns=numeric_cols).set_index(
+        [X_train.index.values]
+    )
+    X_validate_scaled = pd.DataFrame(
+        X_validate_scaled_array, columns=numeric_cols
+    ).set_index([X_validate.index.values])
+    X_test_scaled = pd.DataFrame(X_test_scaled_array, columns=numeric_cols).set_index(
+        [X_test.index.values]
+    )
+    # Overwriting columns in our input dataframes for simplicity
+    for i in numeric_cols:
+        X_train[i] = X_train_scaled[i]
+        X_validate[i] = X_validate_scaled[i]
+        X_test[i] = X_test_scaled[i]
+    return X_train, X_validate, X_test
