@@ -1,6 +1,6 @@
-# Zillow_Regression_Project
+# Zillow Regression Project
 
-___________________________________________________________________________________
+_____________________________________________________________________________
 ___________________________________________________________________________________
 
 ## Goals:
@@ -29,7 +29,8 @@ ________________________________________________________________________________
 
 | Target          |       Datatype          |    Definition                      |
 |-----------------|-------------------------|:----------------------------------:|
-| value_assessed  | 28391 non-null: float64 | assessed value of homes in dataset |   
+| value_assessed  | 28391 non-null: float64 | assessed value of homes in dataset | 
+
 
 | Feature                 |       Datatype         |    Definition               |
 |-------------------------|------------------------|:---------------------------:|
@@ -45,36 +46,47 @@ ________________________________________________________________________________
 ___________________________________________________________________________________
 ___________________________________________________________________________________
 
+## county_code Dictionary
+
+| Fips Code  |     State    |    County    |                      
+|:-----------|:-------------|:-------------|
+| 6037       | California   | Los Angeles  |
+| 6059       | California   | Orange       |
+| 6111       | California   | Ventura      |
+
+___________________________________________________________________________________
+___________________________________________________________________________________
+
 ## Hypothesis and Questions
 
 #### Hypothesis 1:
-- $H_0$: There is a relationship between value_assessed and bedroom count
+- **Null Hypothesis**: There is a relationship between value_assessed and bedroom count
     - value_assessed == bedroom count
-- $H_a$: There is no relationship between value_assessed and bedroom count
+- **Alternate Hypothesis**: There is no relationship between value_assessed and bedroom count
     - value_assessed != bedroom count
 
 <br>
 
 #### Hypothesis 2:
-- $H_0$: There is a relationship between value_assessed and number of bathrooms
+- **Null Hypothesis**: There is a relationship between value_assessed and number of bathrooms
     - value_assessed == bathroom count
-- $H_a$: There is no relationship between value_assessed and number of bathrooms
+- **Alternate Hypothesis**: There is no relationship between value_assessed and number of bathrooms
     - value_assessed != bathroom count
 
 <br>
 
 #### Hypothesis 3:
-- $H_0$: There is no relationship between total_sqft and value_assessed
+- **Null Hypothesis**: There is no relationship between total_sqft and value_assessed
     - total_sqft != value_assessed 
-- $H_a$: There is a relationship between total_sqft and value_assessed
+- **Alternate Hypothesis**: There is a relationship between total_sqft and value_assessed
     - total_sqft == value_assessed
 
 <br>
 
 #### Hypothesis 4:
-- $H_0$: There is no relationship between tax_amount and value_assessed
+- **Null Hypothesis**: There is no relationship between tax_amount and value_assessed
     - tax_amount != value_assessed 
-- $H_a$: There is a relationship between tax_amount and value_assessed
+- **Alternate Hypothesis**: There is a relationship between tax_amount and value_assessed
     - tax_amount == value_assessed
     
 <br>
