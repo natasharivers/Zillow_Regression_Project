@@ -32,7 +32,7 @@ def get_zillow():
     FROM properties_2017
     JOIN predictions_2017 ON properties_2017.parcelid = predictions_2017.parcelid
     JOIN propertylandusetype ON properties_2017.propertylandusetypeid= propertylandusetype.propertylandusetypeid
-    WHERE predictions_2017.transactiondate BETWEEN '2017-05-01' AND '2017-08-31' AND properties_2017.propertylandusetypeid IN (31, 46, 47, 260, 261, 262, 263, 264, 265, 268, 273, 274, 275, 276, 279);
+    WHERE predictions_2017.transactiondate BETWEEN '2017-05-01' AND '2017-08-31' AND properties_2017.propertylandusetypeid IN (260, 261, 262, 263, 264, 265, 268, 273, 275, 276, 279)
     '''
     return pd.read_sql(zp_query, get_connection('zillow'))
 
