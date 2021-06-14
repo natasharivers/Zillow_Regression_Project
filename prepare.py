@@ -102,7 +102,6 @@ def final_prep_zillow(df):
     '''
     This function takes in the zillow df acquired by get_zillow_file,
     then the function removed outliers from bedrooms, bathrooms, value_assessed, and total_sqft
-    After creating dummies, the function combines original df and dummy df to
     Returns a cleaned zillow df.
     '''
     #create new column for tax_rate
