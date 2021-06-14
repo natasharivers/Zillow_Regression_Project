@@ -148,12 +148,6 @@ def final_prep_zillow(df):
     df= df[df.total_sqft > lowerbound_sqft]
     df= df[df.total_sqft < upperbound_sqft]
 
-    #create dummy columns for bedrooms and bathrooms
-    zillow_dummies = pd.get_dummies(data=df, columns=['bedrooms', 'bathrooms'], drop_first=True)
-
-    #concat dummy columns to df
-    df = pd.concat([df, zillow_dummies], axis=1)
-
     #drop duplicates
     df.drop_duplicates(inplace=True)
     
