@@ -64,18 +64,18 @@ ________________________________________________________________________________
 ### Hypothesis:
 
 #### Hypothesis 1:
-- **Null Hypothesis**: There is a relationship between value_assessed and bedroom count
-    - value_assessed == bedroom count
-- **Alternate Hypothesis**: There is no relationship between value_assessed and bedroom count
+- **Null Hypothesis**: There is no relationship between value_assessed and bedroom count
     - value_assessed != bedroom count
+- **Alternate Hypothesis**: There is a relationship between value_assessed and bedroom count
+    - value_assessed == bedroom count
 
 <br>
 
 #### Hypothesis 2:
-- **Null Hypothesis**: There is a relationship between value_assessed and number of bathrooms
-    - value_assessed == bathroom count
-- **Alternate Hypothesis**: There is no relationship between value_assessed and number of bathrooms
+- **Null Hypothesis**: There is no relationship between value_assessed and number of bathrooms
     - value_assessed != bathroom count
+- **Alternate Hypothesis**: There is a relationship between value_assessed and number of bathrooms
+    - value_assessed == bathroom count
 
 <br>
 
