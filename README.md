@@ -89,9 +89,9 @@ ________________________________________________________________________________
 
 #### Hypothesis 4:
 - **Null Hypothesis**: There is no relationship between value_assessed and tax_amount
-    - value_assessed != tax_amount
+    - value_assessed != year_built
 - **Alternate Hypothesis**: There is a relationship between value_assed and tax_amount
-    - value_assessed == tax_amount
+    - value_assessed == year_built
     
 <br>
 
