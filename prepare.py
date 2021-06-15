@@ -115,6 +115,7 @@ def final_prep_zillow(df):
     #drop null values- at most there were 9000 nulls (this is only 0.5% of 2.1M)
     df = df.dropna()
     
+    #remove outliers for bedrooms
     q1_bed = df['bedrooms'].quantile(0.25)
     q3_bed = df['bedrooms'].quantile(0.75)
     iqr_bed = q3_bed - q1_bed
@@ -123,6 +124,7 @@ def final_prep_zillow(df):
     df= df[df.bedrooms > lowerbound_bed]
     df= df[df.bedrooms < upperbound_bed]
 
+    #remove outliers for bathrooms
     q1_bath = df['bathrooms'].quantile(0.25)
     q3_bath = df['bathrooms'].quantile(0.75)
     iqr_bath = q3_bath - q1_bath
@@ -131,6 +133,7 @@ def final_prep_zillow(df):
     df= df[df.bathrooms > lowerbound_bath]
     df= df[df.bathrooms < upperbound_bath]
 
+    #remove outliers for value assessed
     q1_tax = df['value_assessed'].quantile(0.25)
     q3_tax = df['value_assessed'].quantile(0.75)
     iqr_tax = q3_tax- q1_tax
@@ -139,6 +142,7 @@ def final_prep_zillow(df):
     df= df[df.value_assessed > lowerbound_tax]
     df= df[df.value_assessed < upperbound_tax]
 
+    #remove outliers for total sqft
     q1_sqft = df['total_sqft'].quantile(0.25)
     q3_sqft = df['total_sqft'].quantile(0.75)
     iqr_sqft = q3_sqft - q1_sqft
