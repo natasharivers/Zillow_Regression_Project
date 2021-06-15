@@ -59,7 +59,7 @@ ________________________________________________________________________________
 - Is there a relationship between the assessed value of a single unit properties and the number of bedrooms?
 - Is there a relationship between the assessed value of a single unit properties and the number of bathrooms?
 - Is there a relationship between the assessed value of a single unit properties and the total square feet?
-- Is there a relationship between the assessed value of a single unit properties and the tax amount?
+- Is there a relationship between the assessed value of a single unit properties and the year built?
 
 ### Hypothesis:
 
