@@ -95,7 +95,7 @@ ________________________________________________________________________________
     
 <br>
 
-- Hypothesis 1 and hypotheis 2 were answered by comparing the means of two subgroups through a T-Test while Hypothesis 3 and hypothesis 4 were answered using Pearson's Correlation test 
+- Hypothesis 1 and hypothesis 2 were answered by comparing the means of two subgroups through a T-Test while Hypothesis 3 and hypothesis 4 were answered using Pearson's Correlation test (All Null Hypothesis were rejected after testing)
 
 
 ___________________________________________________________________________________
@@ -106,7 +106,7 @@ ________________________________________________________________________________
 
 ### My findings are:
 
-- I will be using the **OLS** model because it is best performing( as shown in the chart below):
+- I will be using the **OLS** model because it is best performing(as shown in the chart below):
 
     
 | model                    | rmse_train    |rmse_validate  | r^2_validate|   
