@@ -106,13 +106,13 @@ ________________________________________________________________________________
 
 ### My findings are:
 
-- I will be using the **Logistic Regression** model because it is best performing( as shown in the chart below):
+- I will be using the **OLS** model because it is best performing( as shown in the chart below):
 
     
 | model                    | rmse_train    |rmse_validate  | r^2_validate|   
 |:-------------------------|:--------------|:--------------|:------------|
 | mean_baseline            | 250181.876924 | 249144.577291 | 0.000000    | 
-| LinearRegression         | 221563.069116 | 220793.764943 | 0.214647    |
+| OLS Model                | 221563.069116 | 220793.764943 | 0.214647    |
 | LassoLars alpha 6        | 221569.410724 | 220802.942919 | 0.214582    |
 | TweedieRegressor power 1 | 221538.889933 | 220961.423080 | 0.213444    |
 
